@@ -1,0 +1,118 @@
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #0a0a0a, #111111);
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Timeline Container */
+.timeline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+/* Timeline Line */
+.timeline {
+    position: relative;
+    width: 6px;
+    background: rgba(0, 255, 255, 0.4);
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Timeline Event Wrapper */
+.timeline-event {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 80px 0; /* Increased spacing */
+}
+
+/* Glowing Circle */
+
+
+/* Square Number Box */
+.timeline-box {
+    width: 70px;  /* Adjust size */
+    height: 70px; /* Keep it square */
+    background: rgba(0, 255, 255, 0.2);
+    border: 3px solid cyan;
+    color: cyan;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px; /* Increased font size */
+    margin-right: 40px; /* Increased spacing */
+    box-shadow: 0 0 15px cyan, 0 0 30px rgba(0, 255, 255, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Hover Effect for Circles */
+.timeline-circle:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px cyan, 0 0 40px rgba(0, 255, 255, 0.9);
+}
+
+/* Event Card */
+.event-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 30px; /* Increased padding */
+    border-radius: 15px;
+    width: 400px; /* Increased width */
+    color: white;
+    box-shadow: 0px 6px 15px rgba(0, 255, 255, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Event Card Hover Effect */
+.event-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 6px 25px rgba(0, 255, 255, 0.6);
+}
+
+/* Event Date */
+.event-date {
+    font-size: 16px; /* Slightly larger */
+    color: cyan;
+    margin-bottom: 8px;
+}
+
+/* Event Title */
+.event-title {
+    font-size: 26px; /* Increased font size */
+    font-weight: bold;
+}
+
+/* Event Description */
+.event-desc {
+    font-size: 18px; /* Increased font size */
+    color: #ddd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .timeline-event {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 50px 0; /* Adjusted spacing */
+    }
+
+    .timeline-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+        line-height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .event-card {
+        width: 90%;
+        padding: 25px;
+    }
+}

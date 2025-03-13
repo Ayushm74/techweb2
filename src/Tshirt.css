@@ -1,0 +1,35 @@
+.tshirt-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .rotating-tshirt {
+    width: 250px; /* Adjust size */
+    height: auto;
+    animation: rotate 5s linear infinite; /* Rotating animation */
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .buy-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .buy-button:hover {
+    background-color: #e74c3c;
+  }
+  

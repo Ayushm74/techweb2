@@ -1,13 +1,15 @@
+/* 🔹 Selection Highlight */
 ::selection {
-  background: #de7cfc28;
+  background: rgba(222, 124, 252, 0.16); /* Using RGBA for better transparency */
 }
 
+/* 🔹 Scrollbar Customization */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px rgb(61 61 61);
+  box-shadow: inset 0 0 5px rgb(61, 61, 61);
   border-radius: 10px;
 }
 
@@ -20,8 +22,10 @@
   background: #facff1;
 }
 
+/* 🔹 General Reset */
 * {
   text-decoration: none;
+  box-sizing: border-box; /* Added for better layout handling */
 }
 
 body {
@@ -30,15 +34,17 @@ body {
   background-color: #030304;
 }
 
+/* 🔹 Fade-in Animation */
 .hidden {
   opacity: 0;
-  transition: all 600ms;
+  transition: all 600ms ease-in-out;
 }
 
 .show {
   opacity: 1;
 }
 
+/* 🔹 Responsive Width Adjustments */
 .short {
   width: 0;
   margin-right: auto;
@@ -49,15 +55,40 @@ body {
   margin-right: 0;
 }
 
+/* 🔹 Column Layout */
 .column {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* 🔹 Landing Section */
 .landing {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   height: 900px;
 }
+
+/* 🛍️ T-Shirt Container with Box */
+.tshirt-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;  /* Adjust the box width */
+  height: 400px; /* Adjust the box height */
+  margin: 20px auto; /* Centering horizontally */
+  background: rgba(0, 0, 0, 0.5); /* Optional dark background */
+  padding: 10px;
+  border-radius: 15px; /* Smooth corners */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Soft glow effect */
+}
+
+/* 🌐 Ensures Canvas Resizes Inside Box */
+.tshirt-container canvas {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px; /* Soft rounded edges */
+}
+
