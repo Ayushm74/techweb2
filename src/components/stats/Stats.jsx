@@ -17,13 +17,15 @@ export default function Stats() {
       }
     });
     const bars = document.getElementById('stats');
-    observer.observe(bars);
-  });
+    if (bars) observer.observe(bars);
+  }, []);
+
   return (
     <div id="stats">
-      <Stat text="Highly Secure" />
-      <Stat text="Very simple" />
-      <Stat text="Free to use" />
+      <Stat text="10+ Industry Experts & Mentors" />      
+      <Stat text="500+ Innovators Participating" />
+      <Stat text="48 Hours of Non-Stop Coding" />
+
     </div>
   );
 }

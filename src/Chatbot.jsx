@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
     const chatRef = useRef(null);
 
     // Auto-scroll to the latest message
@@ -36,52 +37,90 @@ const Chatbot = () => {
     };
 
     return (
-        <div style={styles.chatContainer}>
-            <div style={styles.header}>Chatbot 🤖</div>
-
-            <div style={styles.chatBox} ref={chatRef}>
-                {messages.map((msg, index) => (
-                    <div key={index} style={msg.sender === "user" ? styles.userMessage : styles.botMessage}>
-                        {msg.text}
+        <div>
+            {/* Chat Toggle Button */}
+            <button onClick={() => setIsOpen(!isOpen)} style={styles.toggleButton}>
+                {isOpen ? "✖" : "🤖"}
+            </button>
+            
+            {/* Chat Container */}
+            {isOpen && (
+                <div style={styles.chatContainer}>
+                    <div style={styles.header}>
+                        Chatbot 🤖
+                        <button onClick={() => setIsOpen(false)} style={styles.closeButton}>✖</button>
                     </div>
-                ))}
-            </div>
 
-            <div style={styles.inputContainer}>
-                <input
-                    type="text"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    placeholder="Type a message..."
-                    style={styles.inputField}
-                />
-                <button onClick={sendMessage} style={styles.sendButton}>Send</button>
-            </div>
+                    <div style={styles.chatBox} ref={chatRef}>
+                        {messages.map((msg, index) => (
+                            <div key={index} style={msg.sender === "user" ? styles.userMessage : styles.botMessage}>
+                                {msg.text}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div style={styles.inputContainer}>
+                        <input
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            placeholder="Type a message..."
+                            style={styles.inputField}
+                        />
+                        <button onClick={sendMessage} style={styles.sendButton}>Send</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
 const styles = {
+    toggleButton: {
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        backgroundColor: "#007bff",
+        color: "white",
+        border: "none",
+        borderRadius: "50%",
+        width: "50px",
+        height: "50px",
+        fontSize: "20px",
+        cursor: "pointer",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)"
+    },
     chatContainer: {
         width: "320px",
         height: "400px",
         position: "fixed",
-        bottom: "20px",
+        bottom: "80px",
         right: "20px",
         borderRadius: "10px",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-        backgroundColor: "#f9f9f9",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
+        backgroundColor: "#222",
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
-        fontFamily: "Arial, sans-serif"
+        fontFamily: "Arial, sans-serif",
+        color: "white",
+        border: "1px solid #444"
     },
     header: {
         backgroundColor: "#007bff",
         color: "white",
         padding: "10px",
         textAlign: "center",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        display: "flex",
+        justifyContent: "space-between"
+    },
+    closeButton: {
+        background: "none",
+        border: "none",
+        color: "white",
+        fontSize: "16px",
+        cursor: "pointer"
     },
     chatBox: {
         flex: 1,
@@ -101,22 +140,26 @@ const styles = {
     },
     botMessage: {
         alignSelf: "flex-start",
-        backgroundColor: "#e0e0e0",
+        backgroundColor: "#444",
+        color: "white",
         padding: "8px 12px",
         borderRadius: "15px",
         maxWidth: "80%"
     },
     inputContainer: {
         display: "flex",
-        borderTop: "1px solid #ccc",
-        padding: "8px"
+        borderTop: "1px solid #444",
+        padding: "8px",
+        backgroundColor: "#333"
     },
     inputField: {
         flex: 1,
         padding: "8px",
         borderRadius: "5px",
-        border: "1px solid #ccc",
-        outline: "none"
+        border: "1px solid #666",
+        outline: "none",
+        backgroundColor: "#222",
+        color: "white"
     },
     sendButton: {
         marginLeft: "8px",

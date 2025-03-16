@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <div className="content">
         <h1>
-          Nextio<span> 2023</span>
+          FutureBytes<span> 2025</span>
         </h1>
         <div id="socials">
           <img src={new URL('/src/assets/socialMediaIcons/github.svg', import.meta.url)} alt="Github icon" />

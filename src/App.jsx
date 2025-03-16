@@ -52,7 +52,7 @@ const App = () => {
 
             {/* ✅ Only One T-Shirt */}
             <div className="tshirt-section">
-                <h1 style={{ textAlign: "center", color: "white" }}>Rotating T-Shirt 🛍️</h1>
+                <h1 style={{ textAlign: "center", color: "white" }}>MERCH PRODUCT 🛍️</h1>
                 <Tshirt />
             </div>
 
