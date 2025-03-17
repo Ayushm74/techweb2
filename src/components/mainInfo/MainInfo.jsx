@@ -8,7 +8,7 @@ export default function MainInfo() {
         <span className="event-date">18-21 March</span>
       </h1>
       <p id="info">  
-        Join us for an electrifying journey where **technology meets creativity**.
+        Join us for an electrifying journey where technology meets creativity.
       </p>
       <div style={{ marginTop: '30px', display: 'flex' }}>
         <a href="/brochure.pdf" target="_blank">Download Brochure</a>

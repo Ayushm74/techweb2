@@ -1,0 +1,67 @@
+/* Background with a deep black theme */
+.guest-speakers {
+    background: #000; /* Pure black background */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh; /* Ensure full-page height */
+}
+
+/* Speaker cards container */
+.speakers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Speaker card styling */
+.speaker-card {
+    background: rgba(255, 255, 255, 0.05); /* Slight transparency for a glass effect */
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 15px rgba(255, 105, 180, 0.7), 0px 0px 12px rgba(255, 255, 255, 0.5); /* Pink and White Glow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Speaker card hover effect */
+.speaker-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 25px rgba(255, 105, 180, 0.9), 0px 0px 15px rgba(255, 255, 255, 0.7); /* Brighter Pink-White Glow on Hover */
+}
+
+/* Speaker image styling */
+.speaker-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ff69b4; /* Bright Pink Border */
+}
+
+/* Speaker name */
+.speaker-card h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: white; /* Keep text white */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 15px rgba(255, 105, 180, 0.9); /* White-Pink Neon Text */
+}
+
+/* Speaker details */
+.speaker-card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: white; /* Keep text white */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .speakers-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

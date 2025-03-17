@@ -1,4 +1,4 @@
-# Futuristic site
+# Tech web
 
 Website made in react in futuristic style for no existing revolutionary auth technology
 

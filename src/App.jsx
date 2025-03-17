@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import Spline from "@splinetool/react-spline";
 import Navbar from "./components/navbar/Navbar";
 import MainInfo from "./components/mainInfo/MainInfo";
 import About from "./components/about/About";
@@ -10,10 +9,9 @@ import Footer from "./components/footer/Footer";
 import Chatbot from "./Chatbot"; // ✅ Chatbot component
 import Tshirt from "./Tshirt"; // ✅ T-shirt component
 import EventTimeline from "./EventTimeline"; // ✅ Event Timeline component
+import GuestSpeakersSchedule from "./GuestSpeakers"; // ✅ Imported correctly
 
 const App = () => {
-    const animationUrl = "https://prod.spline.design/eQVHJFKCxwuuXWmE/scene.splinecode"; // ✅ Spline animation URL
-
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((e) => {
@@ -36,7 +34,7 @@ const App = () => {
                 <div style={{ height: "100vh", maxHeight: "1220px" }}>
                     <div className="landing">
                         <MainInfo />
-                        <Spline id="animation" scene={animationUrl} /> {/* ✅ Corrected Spline integration */}
+                        {/* ✅ Removed duplicate Spline component */}
                     </div>
                 </div>
                 <About />
@@ -54,6 +52,11 @@ const App = () => {
             <div className="tshirt-section">
                 <h1 style={{ textAlign: "center", color: "white" }}>MERCH PRODUCT 🛍️</h1>
                 <Tshirt />
+            </div>
+
+            {/* ✅ Guest Speakers Section */}
+            <div className="guest-speakers-section">
+                <GuestSpeakersSchedule />
             </div>
 
             <Footer />
